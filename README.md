@@ -1,7 +1,16 @@
 # ValueObjects - Metrology
 
 <p align="center">
-<a href="mailto:www@mehmetogmen.com.tr"><img src="https://img.shields.io/badge/email-www@mehmetogmen.com.tr-blue.svg?style=flat-square"></a>
+<a href="https://packagist.org/packages/ValueObjects/Metrology"><img src="https://img.shields.io/packagist/v/ValueObjects/Metrology" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/ValueObjects/Metrology"><img src="https://img.shields.io/packagist/dt/ValueObjects/Metrology" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/ValueObjects/Metrology"><img src="https://poser.pugx.org/ValueObjects/Metrology/dependents.svg" alt="Dependents"></a>
+<a href="https://packagist.org/packages/ValueObjects/Metrology"><img src="https://img.shields.io/packagist/l/ValueObjects/Metrology" alt="License"></a>
+</p>
+
+<p align="center">
+<a href="https://travis-ci.org/ValueObjects/Metrology"><img src="https://travis-ci.com/ValueObjects/Metrology.svg" alt="Build Status"></a>
+<a href="https://scrutinizer-ci.com/g/ValueObjects/Metrology/build-status/master"><img src="https://scrutinizer-ci.com/g/ValueObjects/Metrology/badges/quality-score.png?b=master" title="Scrutinizer Code Quality"></a>
+<a href="https://styleci.io/repos/302069112" rel="nofollow"><img src="https://styleci.io/repos/302069112/shield?branch=master" alt="StyleCI"></a>
 </p>
 
 ## About
