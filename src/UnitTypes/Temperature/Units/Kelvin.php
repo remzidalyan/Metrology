@@ -6,5 +6,5 @@ use ValueObjects\Metrology\UnitTypes\Temperature\AbstractTemperature;
 
 class Kelvin extends AbstractTemperature
 {
-    const SYMBOL = 'K';
+    public const SYMBOL = 'K';
 }

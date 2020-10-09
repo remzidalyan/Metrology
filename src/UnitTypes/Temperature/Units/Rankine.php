@@ -6,5 +6,5 @@ use ValueObjects\Metrology\UnitTypes\Temperature\AbstractTemperature;
 
 class Rankine extends AbstractTemperature
 {
-    const SYMBOL = '°Ra';
+    public const SYMBOL = '°Ra';
 }

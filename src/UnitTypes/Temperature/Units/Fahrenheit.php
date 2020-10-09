@@ -6,5 +6,5 @@ use ValueObjects\Metrology\UnitTypes\Temperature\AbstractTemperature;
 
 class Fahrenheit extends AbstractTemperature
 {
-    const SYMBOL = '°F';
+    public const SYMBOL = '°F';
 }

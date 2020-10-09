@@ -6,5 +6,5 @@ use ValueObjects\Metrology\UnitTypes\Temperature\AbstractTemperature;
 
 class Celsius extends AbstractTemperature
 {
-    const SYMBOL = '°C';
+    public const SYMBOL = '°C';
 }
