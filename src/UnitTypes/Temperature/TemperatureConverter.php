@@ -55,7 +55,7 @@ class TemperatureConverter implements TemperatureConverterInterface
 
     private static function convert(TemperatureInterface $from, string $to): float
     {
-        $formula = str_replace('%value%', $from->getValue(), static::getExchangeRates()->{$from::getValueObjectName()}[$to::getValueObjectName()]);
+        $formula = str_replace('%value%', $from->getValue(), self::getExchangeRates()->{$from::getValueObjectName()}[$to::getValueObjectName()]);
         return eval('return ' . $formula . ';');
     }
 
