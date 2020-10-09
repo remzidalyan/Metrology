@@ -6,7 +6,7 @@ use ValueObjects\Common\AbstractValueObject;
 
 abstract class AbstractMetrology extends AbstractValueObject
 {
-    const SYMBOL = '';
+    public const SYMBOL = '';
     protected float $value;
 
     public function __construct(float $value)
