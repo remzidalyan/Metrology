@@ -8,7 +8,6 @@ interface TemperatureInterface extends MetrologyInterface
 {
     public function __construct(float $value);
 
-
     public function calculate(): TemperatureCalculatorInterface;
 
     public function compare(): TemperatureComparatorInterface;

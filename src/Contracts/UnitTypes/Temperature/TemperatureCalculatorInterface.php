@@ -9,6 +9,7 @@ interface TemperatureCalculatorInterface extends CalculatorInterface
 {
     public function __construct(TemperatureInterface $unit);
 
+    public static function avg(TemperatureInterface ...$units): Celsius;
 
     public function add(float $value): TemperatureInterface;
 
@@ -20,11 +21,7 @@ interface TemperatureCalculatorInterface extends CalculatorInterface
 
     public function mod(float $value): TemperatureInterface;
 
-
     public function addUnit(TemperatureInterface ...$unit): TemperatureInterface;
 
     public function subtractUnit(TemperatureInterface ...$unit): TemperatureInterface;
-
-
-    public static function avg(TemperatureInterface ...$units): Celsius;
 }

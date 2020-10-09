@@ -10,12 +10,22 @@ class TemperatureCalculator implements TemperatureCalculatorInterface
 {
     protected TemperatureInterface $unit;
 
-
     public function __construct(TemperatureInterface $unit)
     {
         $this->unit = $unit;
     }
 
+    public static function avg(TemperatureInterface ...$units): Celsius
+    {
+        $sum = 0;
+        foreach ($units as $unit) {
+            $sum += $unit->convert()->toCelsius()->getValue();
+        }
+
+        $avg = $sum / count($units);
+
+        return new Celsius($avg);
+    }
 
     public function add(float $value): TemperatureInterface
     {
@@ -41,7 +51,6 @@ class TemperatureCalculator implements TemperatureCalculatorInterface
     {
         return $this->unit->setValue($this->unit->getValue() % $value);
     }
-
 
     public function addUnit(TemperatureInterface ...$units): TemperatureInterface
     {
@@ -77,18 +86,5 @@ class TemperatureCalculator implements TemperatureCalculatorInterface
         $this->subtract($total);
 
         return $this->unit;
-    }
-
-
-    public static function avg(TemperatureInterface ...$units): Celsius
-    {
-        $sum = 0;
-        foreach ($units as $unit) {
-            $sum += $unit->convert()->toCelsius()->getValue();
-        }
-
-        $avg = $sum / count($units);
-
-        return new Celsius($avg);
     }
 }

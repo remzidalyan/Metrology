@@ -8,7 +8,6 @@ interface TemperatureConverterInterface extends ConverterInterface
 {
     public function __construct(TemperatureInterface $unit);
 
-
     public function convertTo(TemperatureInterface $unit): TemperatureInterface;
 
     public function toCelsius(): TemperatureInterface;

@@ -4,9 +4,7 @@ namespace ValueObjects\Metrology\UnitTypes\Temperature;
 
 use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureConverterInterface;
 use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureInterface;
-use ValueObjects\Metrology\UnitTypes\Temperature\Units\{
-    Celsius, Fahrenheit, Kelvin, Rankine, Reaumur
-};
+use ValueObjects\Metrology\UnitTypes\Temperature\Units\{Celsius, Fahrenheit, Kelvin, Rankine, Reaumur};
 
 class TemperatureConverter implements TemperatureConverterInterface
 {
@@ -44,7 +42,6 @@ class TemperatureConverter implements TemperatureConverterInterface
     ];
 
     protected TemperatureInterface $from;
-
 
     public function __construct(TemperatureInterface $from)
     {

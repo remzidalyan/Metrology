@@ -3,44 +3,15 @@
 namespace ValueObjects\Metrology\UnitTypes\Temperature;
 
 use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\{TemperatureComparatorInterface, TemperatureInterface};
-use ValueObjects\Metrology\UnitTypes\Temperature\Units\Celsius;
 
 class TemperatureComparator implements TemperatureComparatorInterface
 {
     protected TemperatureInterface $unit;
 
-
     public function __construct(TemperatureInterface $unit)
     {
         $this->unit = $unit;
     }
-
-
-    public function equals(TemperatureInterface $unit): bool
-    {
-        return $this->unit->getValue() === $unit->convert()->convertTo($this->unit)->getValue();
-    }
-
-    public function greaterThan(TemperatureInterface $unit): bool
-    {
-        return $this->unit->getValue() > $unit->convert()->convertTo($this->unit)->getValue();
-    }
-
-    public function greaterThanOrEqual(TemperatureInterface $unit): bool
-    {
-        return $this->unit->getValue() >= $unit->convert()->convertTo($this->unit)->getValue();
-    }
-
-    public function lessThan(TemperatureInterface $unit): bool
-    {
-        return $this->unit->getValue() < $unit->convert()->convertTo($this->unit)->getValue();
-    }
-
-    public function lessThanOrEqual(TemperatureInterface $unit): bool
-    {
-        return $this->unit->getValue() <= $unit->convert()->convertTo($this->unit)->getValue();
-    }
-
 
     public static function max(TemperatureInterface ...$units): TemperatureInterface
     {
@@ -66,5 +37,30 @@ class TemperatureComparator implements TemperatureComparatorInterface
         $maxValKeys = array_keys($items, $maxItem);
 
         return $units[$maxValKeys[0]];
+    }
+
+    public function equals(TemperatureInterface $unit): bool
+    {
+        return $this->unit->getValue() === $unit->convert()->convertTo($this->unit)->getValue();
+    }
+
+    public function greaterThan(TemperatureInterface $unit): bool
+    {
+        return $this->unit->getValue() > $unit->convert()->convertTo($this->unit)->getValue();
+    }
+
+    public function greaterThanOrEqual(TemperatureInterface $unit): bool
+    {
+        return $this->unit->getValue() >= $unit->convert()->convertTo($this->unit)->getValue();
+    }
+
+    public function lessThan(TemperatureInterface $unit): bool
+    {
+        return $this->unit->getValue() < $unit->convert()->convertTo($this->unit)->getValue();
+    }
+
+    public function lessThanOrEqual(TemperatureInterface $unit): bool
+    {
+        return $this->unit->getValue() <= $unit->convert()->convertTo($this->unit)->getValue();
     }
 }

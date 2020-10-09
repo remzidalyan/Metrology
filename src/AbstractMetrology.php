@@ -14,6 +14,10 @@ abstract class AbstractMetrology extends AbstractValueObject
         $this->value = $value;
     }
 
+    public static function getSymbol(): string
+    {
+        return static::SYMBOL;
+    }
 
     public function getValue(): float
     {
@@ -25,12 +29,6 @@ abstract class AbstractMetrology extends AbstractValueObject
         $this->value = $value;
         return $this;
     }
-
-    public static function getSymbol(): string
-    {
-        return static::SYMBOL;
-    }
-
 
     public function __toString(): string
     {

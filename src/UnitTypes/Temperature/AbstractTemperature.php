@@ -3,9 +3,10 @@
 namespace ValueObjects\Metrology\UnitTypes\Temperature;
 
 use ValueObjects\Metrology\AbstractMetrology;
-use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\{
-    TemperatureInterface, TemperatureCalculatorInterface, TemperatureComparatorInterface, TemperatureConverterInterface
-};
+use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureCalculatorInterface;
+use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureComparatorInterface;
+use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureConverterInterface;
+use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureInterface;
 
 abstract class AbstractTemperature extends AbstractMetrology implements TemperatureInterface
 {
