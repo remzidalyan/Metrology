@@ -13,4 +13,6 @@ interface TemperatureInterface extends MetrologyInterface
     public function compare(): TemperatureComparatorInterface;
 
     public function convert(): TemperatureConverterInterface;
+
+    public function observer(): TemperatureObserverManagerInterface;
 }

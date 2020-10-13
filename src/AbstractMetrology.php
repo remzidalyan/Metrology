@@ -4,7 +4,7 @@ namespace ValueObjects\Metrology;
 
 use ValueObjects\Common\AbstractValueObject;
 
-abstract class AbstractMetrology extends AbstractValueObject
+abstract class AbstractMetrology extends AbstractValueObject implements MetrologyInterface
 {
     public const SYMBOL = '';
     protected float $value;
@@ -26,7 +26,10 @@ abstract class AbstractMetrology extends AbstractValueObject
 
     public function setValue(float $value): self
     {
+        $this->observer()->notify('updating');
         $this->value = $value;
+        $this->observer()->notify('updated');
+
         return $this;
     }
 
