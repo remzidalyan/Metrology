@@ -8,11 +8,11 @@ interface TemperatureInterface extends MetrologyInterface
 {
     public function __construct(float $value);
 
-    public function calculate(): TemperatureCalculatorInterface;
+    public function calculate(TemperatureCalculatorInterface $calculator = null): TemperatureCalculatorInterface;
 
-    public function compare(): TemperatureComparatorInterface;
+    public function compare(TemperatureComparatorInterface $comparator = null): TemperatureComparatorInterface;
 
-    public function convert(): TemperatureConverterInterface;
+    public function convert(TemperatureConverterInterface $converter = null): TemperatureConverterInterface;
 
-    public function observer(): TemperatureObserverManagerInterface;
+    public function observer(TemperatureObserverManagerInterface $observerManager = null): TemperatureObserverManagerInterface;
 }

@@ -1,7 +1,6 @@
 {
     "name": "valueobjects/metrology",
     "description": "ValueObjects - Metrology Package",
-    "version": "v0.0.1",
     "type": "library",
     "keywords": [
         "vo",
@@ -23,12 +22,12 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.4.0"
+        "phpunit/phpunit": "^9.4.0",
+        "valueobjects/common": "^v0.0.1"
     },
     "autoload": {
         "psr-4": {
-            "ValueObjects\\Metrology\\": "./src/",
-            "ValueObjects\\Common\\": "./Common/"
+            "ValueObjects\\Metrology\\": "./src/"
         }
     },
     "autoload-dev": {

@@ -11,27 +11,57 @@ use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureObserverMa
 
 abstract class AbstractTemperature extends AbstractMetrology implements TemperatureInterface
 {
-    public function calculate(): TemperatureCalculatorInterface
+    protected TemperatureCalculatorInterface $calculator;
+    protected TemperatureComparatorInterface $comparator;
+    protected TemperatureConverterInterface $converter;
+    protected TemperatureObserverManagerInterface $observerManager;
+
+    public function calculate(TemperatureCalculatorInterface $calculator = null): TemperatureCalculatorInterface
     {
-        return new TemperatureCalculator($this);
+        if ($calculator !== null) {
+            $this->calculator = new $calculator($this);
+        } else if ($this->calculator === null) {
+            $this->calculator = new TemperatureCalculator($this);
+        }
+
+        return $this->calculator;
     }
 
-    public function compare(): TemperatureComparatorInterface
+    public function compare(TemperatureComparatorInterface $comparator = null): TemperatureComparatorInterface
     {
-        return new TemperatureComparator($this);
+        if ($comparator !== null) {
+            $this->comparator = new $comparator($this);
+        } else if ($this->comparator === null) {
+            $this->comparator = new TemperatureComparator($this);
+        }
+
+        return $this->comparator;
     }
 
-    public function convert(): TemperatureConverterInterface
+    public function convert(TemperatureConverterInterface $converter = null): TemperatureConverterInterface
     {
-        return new TemperatureConverter($this);
+        if ($converter !== null) {
+            $this->converter = new $converter($this);
+        } else if ($this->converter === null) {
+            $this->converter = new TemperatureConverter($this);
+        }
+
+        return $this->converter;
     }
 
-    public function observer(): TemperatureObserverManagerInterface
+    public function observer(TemperatureObserverManagerInterface $observerManager = null): TemperatureObserverManagerInterface
     {
-        if($this->observerManager === null) {
+        if ($observerManager !== null) {
+            $this->observerManager = new $observerManager($this);
+        } else if ($this->observerManager === null) {
             $this->observerManager = new TemperatureObserverManager($this);
         }
 
         return $this->observerManager;
+    }
+
+    public function __destruct()
+    {
+        $this->observer()->notify('destroy');
     }
 }
