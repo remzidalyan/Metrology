@@ -55,7 +55,6 @@ class TemperatureCalculator implements TemperatureCalculatorInterface
     public function addUnit(TemperatureInterface ...$units): TemperatureInterface
     {
         $total = 0;
-
         foreach ($units as $unit) {
             if (get_class($unit) === Celsius::class) {
                 $total += $unit->getValue();
@@ -73,7 +72,6 @@ class TemperatureCalculator implements TemperatureCalculatorInterface
     public function subtractUnit(TemperatureInterface ...$units): TemperatureInterface
     {
         $total = 0;
-
         foreach ($units as $unit) {
             if (get_class($unit) === Celsius::class) {
                 $total += $unit->getValue();

@@ -3,6 +3,7 @@
 namespace ValueObjects\Metrology\Contracts\UnitTypes\Temperature;
 
 use ValueObjects\Metrology\Contracts\ConverterInterface;
+use ValueObjects\Metrology\UnitTypes\Temperature\Units\{Celsius, Fahrenheit, Kelvin, Rankine, Reaumur};
 
 interface TemperatureConverterInterface extends ConverterInterface
 {
@@ -10,13 +11,13 @@ interface TemperatureConverterInterface extends ConverterInterface
 
     public function convertTo(TemperatureInterface $unit): TemperatureInterface;
 
-    public function toCelsius(): TemperatureInterface;
+    public function toCelsius(): Celsius;
 
-    public function toFahrenheit(): TemperatureInterface;
+    public function toFahrenheit(): Fahrenheit;
 
-    public function toKelvin(): TemperatureInterface;
+    public function toKelvin(): Kelvin;
 
-    public function toRankine(): TemperatureInterface;
+    public function toRankine(): Rankine;
 
-    public function toReaumur(): TemperatureInterface;
+    public function toReaumur(): Reaumur;
 }

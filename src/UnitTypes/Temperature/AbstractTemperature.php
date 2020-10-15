@@ -11,10 +11,10 @@ use ValueObjects\Metrology\Contracts\UnitTypes\Temperature\TemperatureObserverMa
 
 abstract class AbstractTemperature extends AbstractMetrology implements TemperatureInterface
 {
-    protected TemperatureCalculatorInterface $calculator;
-    protected TemperatureComparatorInterface $comparator;
-    protected TemperatureConverterInterface $converter;
-    protected TemperatureObserverManagerInterface $observerManager;
+    protected ?TemperatureCalculatorInterface $calculator = null;
+    protected ?TemperatureComparatorInterface $comparator = null;
+    protected ?TemperatureConverterInterface $converter = null;
+    protected ?TemperatureObserverManagerInterface $observerManager = null;
 
     public function calculate(TemperatureCalculatorInterface $calculator = null): TemperatureCalculatorInterface
     {

@@ -64,7 +64,7 @@ class TemperatureConverter implements TemperatureConverterInterface
         return $this::{'to' . $unit::getValueObjectName()}();
     }
 
-    public function toCelsius(): TemperatureInterface
+    public function toCelsius(): Celsius
     {
         if ($this->from instanceof Celsius) {
             return new Celsius($this->from->getValue());
@@ -73,7 +73,7 @@ class TemperatureConverter implements TemperatureConverterInterface
         return new Celsius($this::convert($this->from, Celsius::class));
     }
 
-    public function toFahrenheit(): TemperatureInterface
+    public function toFahrenheit(): Fahrenheit
     {
         if ($this->from instanceof Fahrenheit) {
             return new Fahrenheit($this->from->getValue());
@@ -82,7 +82,7 @@ class TemperatureConverter implements TemperatureConverterInterface
         return new Fahrenheit($this::convert($this->from, Fahrenheit::class));
     }
 
-    public function toKelvin(): TemperatureInterface
+    public function toKelvin(): Kelvin
     {
         if ($this->from instanceof Kelvin) {
             return new Kelvin($this->from->getValue());
@@ -91,7 +91,7 @@ class TemperatureConverter implements TemperatureConverterInterface
         return new Kelvin($this::convert($this->from, Kelvin::class));
     }
 
-    public function toRankine(): TemperatureInterface
+    public function toRankine(): Rankine
     {
         if ($this->from instanceof Rankine) {
             return new Rankine($this->from->getValue());
@@ -100,7 +100,7 @@ class TemperatureConverter implements TemperatureConverterInterface
         return new Rankine($this::convert($this->from, Rankine::class));
     }
 
-    public function toReaumur(): TemperatureInterface
+    public function toReaumur(): Reaumur
     {
         if ($this->from instanceof Reaumur) {
             return new Reaumur($this->from->getValue());
