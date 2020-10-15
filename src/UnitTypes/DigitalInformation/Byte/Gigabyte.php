@@ -4,6 +4,6 @@ namespace ValueObjects\Metrology\UnitTypes\DigitalInformation\Byte;
 
 class Gigabyte extends AbstractByte
 {
-    const EXPONENT = 30;
-    const SYMBOL = 'GB';
+    public const EXPONENT = 30;
+    public const SYMBOL = 'GB';
 }

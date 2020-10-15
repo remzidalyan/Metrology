@@ -4,6 +4,6 @@ namespace ValueObjects\Metrology\UnitTypes\DigitalInformation\Bit;
 
 class Terabit extends AbstractBit
 {
-    const EXPONENT = 40;
-    const SYMBOL = 'Tbit';
+    public const EXPONENT = 40;
+    public const SYMBOL = 'Tbit';
 }

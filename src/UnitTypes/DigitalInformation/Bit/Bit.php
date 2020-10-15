@@ -4,6 +4,6 @@ namespace ValueObjects\Metrology\UnitTypes\DigitalInformation\Bit;
 
 class Bit extends AbstractBit
 {
-    const EXPONENT = 0;
-    const SYMBOL = 'bit';
+    public const EXPONENT = 0;
+    public const SYMBOL = 'bit';
 }

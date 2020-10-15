@@ -4,6 +4,6 @@ namespace ValueObjects\Metrology\UnitTypes\DigitalInformation\Bit;
 
 class Exabit extends AbstractBit
 {
-    const EXPONENT = 60;
-    const SYMBOL = 'Ebit';
+    public const EXPONENT = 60;
+    public const SYMBOL = 'Ebit';
 }

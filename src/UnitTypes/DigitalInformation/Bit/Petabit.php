@@ -4,6 +4,6 @@ namespace ValueObjects\Metrology\UnitTypes\DigitalInformation\Bit;
 
 class Petabit extends AbstractBit
 {
-    const EXPONENT = 50;
-    const SYMBOL = 'Pbit';
+    public const EXPONENT = 50;
+    public const SYMBOL = 'Pbit';
 }

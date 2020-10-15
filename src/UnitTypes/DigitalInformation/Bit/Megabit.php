@@ -4,6 +4,6 @@ namespace ValueObjects\Metrology\UnitTypes\DigitalInformation\Bit;
 
 class Megabit extends AbstractBit
 {
-    const EXPONENT = 20;
-    const SYMBOL = 'Mbit';
+    public const EXPONENT = 20;
+    public const SYMBOL = 'Mbit';
 }
