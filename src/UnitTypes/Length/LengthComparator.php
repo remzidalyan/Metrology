@@ -17,7 +17,7 @@ class LengthComparator implements LengthComparatorInterface
     {
         $items = [];
         foreach ($units as $unit) {
-            $items[] = $unit->convert()->toCelsius()->getValue();
+            $items[] = $unit->convert()->toMeter()->getValue();
         }
 
         $maxItem = max($items);

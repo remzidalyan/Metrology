@@ -3,7 +3,7 @@
 namespace ValueObjects\Metrology\Contracts\UnitTypes\Length;
 
 use ValueObjects\Metrology\Contracts\CalculatorInterface;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Meter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Meter;
 
 interface LengthCalculatorInterface extends CalculatorInterface
 {

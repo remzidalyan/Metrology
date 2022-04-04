@@ -18,16 +18,16 @@ class LengthObserverManager extends AbstractMetrologyObserverManager implements 
         $this->object = $unit;
     }
 
+    public function contains(LengthObserverInterface $observer): bool
+    {
+        return $this->observers->contains($observer);
+    }
+
     public function attach(LengthObserverInterface $observer, $data = null): void
     {
         if (!$this->contains($observer)) {
             $this->observers->attach($observer, $data = null);
         }
-    }
-
-    public function contains(LengthObserverInterface $observer): bool
-    {
-        return $this->observers->contains($observer);
     }
 
     public function detach(LengthObserverInterface $observer): void

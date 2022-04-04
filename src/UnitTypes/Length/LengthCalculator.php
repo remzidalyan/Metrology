@@ -4,7 +4,7 @@ namespace ValueObjects\Metrology\UnitTypes\Length;
 
 use ValueObjects\Metrology\Contracts\UnitTypes\Length\LengthCalculatorInterface;
 use ValueObjects\Metrology\Contracts\UnitTypes\Length\LengthInterface;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Meter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Meter;
 
 class LengthCalculator implements LengthCalculatorInterface
 {

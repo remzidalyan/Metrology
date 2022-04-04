@@ -3,26 +3,39 @@
 namespace ValueObjects\Metrology\Contracts\UnitTypes\Length;
 
 use ValueObjects\Metrology\Contracts\ConverterInterface;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Attometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Centimeter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Decameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Decimeter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Exameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Femtometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Gigameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Hectometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Kilometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Megameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Meter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Micrometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Millimeter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Nanometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Petameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Picometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Terameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Yoctometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Yottameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Zettameter;
+use ValueObjects\Metrology\UnitTypes\Length\Fermi\Fermi;
+use ValueObjects\Metrology\UnitTypes\Length\Foot\Foot;
+use ValueObjects\Metrology\UnitTypes\Length\Inch\Inch;
+use ValueObjects\Metrology\UnitTypes\Length\Inch\Microinch;
+use ValueObjects\Metrology\UnitTypes\Length\LightYear\LightYear;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Attometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Centimeter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Decameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Decimeter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Exameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Femtometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Gigameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Hectometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Kilometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Megameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Meter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Micrometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Millimeter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Nanometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Petameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Picometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Terameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Yoctometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Yottameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Zettameter;
+use ValueObjects\Metrology\UnitTypes\Length\Micron\Micron;
+use ValueObjects\Metrology\UnitTypes\Length\Mil\Mil;
+use ValueObjects\Metrology\UnitTypes\Length\Mile\Mile;
+use ValueObjects\Metrology\UnitTypes\Length\Parsec\Kiloparsec;
+use ValueObjects\Metrology\UnitTypes\Length\Parsec\Megaparsec;
+use ValueObjects\Metrology\UnitTypes\Length\Parsec\Parsec;
+use ValueObjects\Metrology\UnitTypes\Length\Yard\Kiloyard;
+use ValueObjects\Metrology\UnitTypes\Length\Yard\Yard;
 
 interface LengthConverterInterface extends ConverterInterface
 {
@@ -69,4 +82,30 @@ interface LengthConverterInterface extends ConverterInterface
     public function toAttometer(): Attometer;
 
     public function toYoctometer(): Yoctometer;
+
+    public function toMicron(): Micron;
+
+    public function toMegaparsec(): Megaparsec;
+
+    public function toKiloparsec(): Kiloparsec;
+
+    public function toParsec(): Parsec;
+
+    public function toKiloyard(): Kiloyard;
+
+    public function toYard(): Yard;
+
+    public function toMil(): Mil;
+
+    public function toMile(): Mile;
+
+    public function toMicroinch(): Microinch;
+
+    public function toInch(): Inch;
+
+    public function toLightYear(): LightYear;
+
+    public function toFermi(): Fermi;
+
+    public function toFoot(): Foot;
 }

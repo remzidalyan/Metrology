@@ -4,26 +4,39 @@ namespace ValueObjects\Metrology\UnitTypes\Length;
 
 use ValueObjects\Metrology\Contracts\UnitTypes\Length\LengthConverterInterface;
 use ValueObjects\Metrology\Contracts\UnitTypes\Length\LengthInterface;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Attometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Centimeter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Decameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Decimeter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Exameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Femtometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Gigameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Hectometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Kilometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Megameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Meter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Micrometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Millimeter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Nanometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Petameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Picometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Terameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Yoctometer;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Yottameter;
-use ValueObjects\Metrology\UnitTypes\Length\FormulatedLength\Zettameter;
+use ValueObjects\Metrology\UnitTypes\Length\Fermi\Fermi;
+use ValueObjects\Metrology\UnitTypes\Length\Foot\Foot;
+use ValueObjects\Metrology\UnitTypes\Length\Inch\Inch;
+use ValueObjects\Metrology\UnitTypes\Length\Inch\Microinch;
+use ValueObjects\Metrology\UnitTypes\Length\LightYear\LightYear;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Attometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Centimeter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Decameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Decimeter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Exameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Femtometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Gigameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Hectometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Kilometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Megameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Meter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Micrometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Millimeter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Nanometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Petameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Picometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Terameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Yoctometer;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Yottameter;
+use ValueObjects\Metrology\UnitTypes\Length\Meter\Zettameter;
+use ValueObjects\Metrology\UnitTypes\Length\Micron\Micron;
+use ValueObjects\Metrology\UnitTypes\Length\Mil\Mil;
+use ValueObjects\Metrology\UnitTypes\Length\Mile\Mile;
+use ValueObjects\Metrology\UnitTypes\Length\Parsec\Kiloparsec;
+use ValueObjects\Metrology\UnitTypes\Length\Parsec\Megaparsec;
+use ValueObjects\Metrology\UnitTypes\Length\Parsec\Parsec;
+use ValueObjects\Metrology\UnitTypes\Length\Yard\Kiloyard;
+use ValueObjects\Metrology\UnitTypes\Length\Yard\Yard;
 
 class LengthConverter implements LengthConverterInterface
 {
@@ -223,5 +236,121 @@ class LengthConverter implements LengthConverterInterface
         }
 
         return new Yoctometer($this::convert($this->from, Yoctometer::class));
+    }
+
+    public function toMicron(): Micron
+    {
+        if ($this->from instanceof Micron) {
+            return new Micron($this->from->getValue());
+        }
+        return new Micron($this::convert($this->from, Micron::class));
+    }
+
+    public function toMegaparsec(): Megaparsec
+    {
+        if ($this->from instanceof Megaparsec) {
+            return new Megaparsec($this->from->getValue());
+        }
+
+        return new Megaparsec($this::convert($this->from, Megaparsec::class));
+    }
+
+    public function toKiloparsec(): Kiloparsec
+    {
+        if ($this->from instanceof Kiloparsec) {
+            return new Kiloparsec($this->from->getValue());
+        }
+
+        return new Kiloparsec($this::convert($this->from, Kiloparsec::class));
+    }
+
+    public function toParsec(): Parsec
+    {
+        if ($this->from instanceof Parsec) {
+            return new Parsec($this->from->getValue());
+        }
+
+        return new Parsec($this::convert($this->from, Parsec::class));
+    }
+
+    public function toKiloyard(): Kiloyard
+    {
+        if ($this->from instanceof Kiloyard) {
+            return new Kiloyard($this->from->getValue());
+        }
+
+        return new Kiloyard($this::convert($this->from, Kiloyard::class));
+    }
+
+    public function toYard(): Yard
+    {
+        if ($this->from instanceof Yard) {
+            return new Yard($this->from->getValue());
+        }
+
+        return new Yard($this::convert($this->from, Yard::class));
+    }
+
+    public function toMil(): Mil
+    {
+        if ($this->from instanceof Mil) {
+            return new Mil($this->from->getValue());
+        }
+
+        return new Mil($this::convert($this->from, Mil::class));
+    }
+
+    public function toMile(): Mile
+    {
+        if ($this->from instanceof Mile) {
+            return new Mile($this->from->getValue());
+        }
+
+        return new Mile($this::convert($this->from, Mile::class));
+    }
+
+    public function toMicroinch(): Microinch
+    {
+        if ($this->from instanceof Microinch) {
+            return new Microinch($this->from->getValue());
+        }
+
+        return new Microinch($this::convert($this->from, Microinch::class));
+    }
+
+    public function toInch(): Inch
+    {
+        if ($this->from instanceof Inch) {
+            return new Inch($this->from->getValue());
+        }
+
+        return new Inch($this::convert($this->from, Inch::class));
+    }
+
+    public function toLightYear(): LightYear
+    {
+        if ($this->from instanceof LightYear) {
+            return new LightYear($this->from->getValue());
+        }
+
+        return new LightYear($this::convert($this->from, LightYear::class));
+    }
+
+    public function toFermi(): Fermi
+    {
+        if ($this->from instanceof Fermi) {
+            return new Fermi($this->from->getValue());
+        }
+
+        return new Fermi($this::convert($this->from, Fermi::class));
+    }
+
+    public function toFoot(): Foot
+    {
+        if ($this->from instanceof Foot) {
+            return new Foot($this->from->getValue());
+        }
+
+        return new Foot($this::convert($this->from, Foot::class));
     }
 }
